@@ -1,0 +1,15 @@
+
+[
+    {
+        "roll_no": "D2-001",
+        "name": "Ayesha",
+        "age": 20,
+        "course": "BSCS"
+    },
+    {
+        "roll_no": "D2-002",
+        "name": "Hamza",
+        "age": 21,
+        "course": "BSCS"
+    }
+]
