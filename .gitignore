@@ -16,3 +16,9 @@ venv/
 # Environment variables and secrets
 .env
 .env.*
+
+echo "*.zip" >> .gitignore
+echo "*.pkl" >> .gitignore
+git add .gitignore
+*.zip
+*.pkl
