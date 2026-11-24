@@ -94,38 +94,47 @@ def train_final_model():
     return best_model, X_test, y_test
 
 
-def demonstrate_prediction(model, X_test):
+def demonstrate_prediction(model, X_test, y_test):
 
     sample = X_test.iloc[[0]]
 
+    actual_label = y_test.iloc[0]
     prediction = model.predict(sample)[0]
-
     probabilities = model.predict_proba(sample)[0]
 
-    class_names = ["malignant", "benign"]
+    class_names = {
+        0: "malignant",
+        1: "benign"
+    }
 
     print("\n" + "=" * 60)
     print("SAMPLE PREDICTION DEMONSTRATION")
     print("=" * 60)
+
+    print("\nActual Class:")
+    print(class_names[actual_label])
 
     print("\nPredicted Class:")
     print(class_names[prediction])
 
     print("\nPrediction Probabilities:")
 
-    for class_index, class_name in enumerate(class_names):
+    for class_index, class_name in class_names.items():
 
         print(
             f"{class_name}: "
-            f"{probabilities[class_index]:.4f}"
+            f"{probabilities[class_index]:.10f}"
         )
 
+    print("\nPrediction Correct:")
+
+    print(actual_label == prediction)
 
 def main():
 
     model, X_test, y_test = train_final_model()
 
-    demonstrate_prediction(model, X_test)
+    demonstrate_prediction(model, X_test,y_test)
 
 
 if __name__ == "__main__":
