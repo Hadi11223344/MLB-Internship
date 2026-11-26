@@ -17,8 +17,6 @@ venv/
 .env
 .env.*
 
-echo "*.zip" >> .gitignore
-echo "*.pkl" >> .gitignore
-git add .gitignore
 *.zip
 *.pkl
+*.keras
